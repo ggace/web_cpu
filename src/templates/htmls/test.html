@@ -13,10 +13,49 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/daisyui@2.22.0/dist/full.css" rel="stylesheet" type="text/css" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+            async function apiRequest(url, type){
+                let result = null
+                return $.ajax({
+                    url:url,
+                    type:type,
+                    dataType:'json',
+                    success:function(data){
+                        return data
+                    },
+                    error: function(a,b,c){
+                        alert("서버 통신 과정에서 에러 발생")
+                    },
+                })
+            }// 사용법 a = await apiRequest("", "")
+
+        </script>
     </head>
     <body>
         
-        welcome
+        welcome<br>
+
+        <label for="my-modal-3" class="btn modal-button m-1">pop up</label>
+
+        <!-- Put this part before </body> tag -->
+        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+        <div class="modal">
+            <div class="modal-box relative">
+                <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 class="text-lg font-bold">pop up title</h3>
+                <p class="py-4">pop up text</p>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown">
+            <label tabindex="0" class="btn m-1">dropdown</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+            </ul>
+        </div>
 
     </body>
 </html>
