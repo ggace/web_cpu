@@ -1,11 +1,25 @@
 import pymysql
+import yaml
+
+def readConfig():
+    with open('../../../config.yml') as f:
+
+        config = yaml.load(f, Loader=yaml.FullLoader)
+
+        return config
 
 con = None
 
 def connect():
+    
     global con;
     # STEP 2: MySQL Connection 연결
-    con = pymysql.connect(host='localhost', port=3307, user='pyCPUid', password='pyCPUpw1234',
+
+    config = readConfig()
+    con = pymysql.connect(host=config['application'][0]['db'][0]['host'], 
+                        port=config['application'][0]['db'][0]['port'], 
+                        user=config['application'][0]['db'][0]['id'], 
+                        password=config['application'][0]['db'][0]['pw'],
                         db='cpuServer', charset='utf8',
                         autocommit=True,
                       cursorclass=pymysql.cursors.DictCursor)
