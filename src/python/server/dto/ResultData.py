@@ -8,6 +8,11 @@ class ResultData():
         self.msg = msg
         self.dataName = dataName
         self.data = data
+    def __init__(self, resultCode: str, msg: str):
+        self.resultCode = resultCode
+        self.msg = msg
+        self.dataName = None
+        self.data = None
 
     def to_string(self):
         return """{
