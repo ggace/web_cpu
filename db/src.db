@@ -1,0 +1,12 @@
+CREATE USER 'pyCPUid'@localhost IDENTIFIED BY 'pyCPUpw1234';
+CREATE DATABASE cpuServer;
+
+GRANT ALL PRIVILEGES ON *.* TO 'pyCPUid'@localhost;
+
+UES DATABASE cpuServer;
+
+INSERT INTO sample
+VALUES("sample1", "welcome text1");
+
+INSERT INTO sample
+VALUES("sample2", "welcome text2");

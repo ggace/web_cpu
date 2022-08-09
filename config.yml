@@ -1,0 +1,4 @@
+application:
+  db:
+    id: "pyCPUid"
+    pw: "pyCPUpw1234"
