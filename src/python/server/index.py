@@ -14,10 +14,6 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="../../templates/static"), name="static")
 templates = Jinja2Templates(directory="../../templates/htmls")
 
-class QueryModel(BaseModel):
-    name: str | None = None
-    price: int | None = None
-
 apis = {
     "main": {"function" : mainController.main, "comment": "메인페이지"},
     "sample": {"function" : sampleController.sample, "comment": "샘플페이지"}

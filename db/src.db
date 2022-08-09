@@ -3,7 +3,14 @@ CREATE DATABASE cpuServer;
 
 GRANT ALL PRIVILEGES ON *.* TO 'pyCPUid'@localhost;
 
-UES DATABASE cpuServer;
+----------------------------------------------------------------
+
+USE cpuServer;
+
+CREATE TABLE sample(
+	test1 VARCHAR(10) NOT NULL,
+	test2 VARCHAR(30) NOT NULL
+);
 
 INSERT INTO sample
 VALUES("sample1", "welcome text1");
