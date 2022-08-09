@@ -40,7 +40,7 @@
  - data: object     (데이터 - client 사용)
 
 ## 내가 더 만들어야 하는것
- - client: pop up, api 통신 func
+ - client: 
  - server : 
 
 ## 더있으면 좋겠는건 연락
