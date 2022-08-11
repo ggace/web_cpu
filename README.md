@@ -4,7 +4,7 @@
 1. python, xampp, sqlyog 설치
 2. 자신이 좋아하는 ide 설치
 3. 파일 zip으로 다운로드후 압축 해제 -> ide로 열기
-4. ide, cmd - src/initial/py.py 맨위 세 문장 cmd에 각각 입력
+4. ide, cmd - src/initial/py.py 맨위 네 문장 cmd에 각각 입력
 5. xampp - xampp 실행 후 mysql config 누른 후 my.ini 열기
 6. my.ini - ctrl - F 누른 후 port찾아 그 옆에 3306을 모두 3307로 변환
 7. my.ini - 44번째 라인에 lower_case_table_names = 2 붙여넣기
