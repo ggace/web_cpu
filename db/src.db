@@ -12,6 +12,18 @@ CREATE TABLE sample(
 	test2 VARCHAR(30) NOT NULL
 );
 
+CREATE TABLE `user`(
+	id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	loginId VARCHAR(30) NOT NULL,
+	loginpw VARCHAR(100) NOT NULL,
+	nickname VARCHAR(50) NOT NULL,
+	email VARCHAR(60),
+	regDate DATETIME NOT NULL,
+	updateDate DATETIME NOT NULL,
+	delStatus TINYINT(1) NOT NULL DEFAULT 0,
+	delDate DATETIME
+);
+
 INSERT INTO sample
 VALUES("sample1", "welcome text1");
 
