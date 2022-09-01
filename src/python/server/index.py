@@ -8,6 +8,7 @@ import util.Util as util
 
 import controller.MainController as mainController
 import controller.SampleController as sampleController
+import controller.PostController as postController
 
 app = FastAPI()
 
@@ -16,7 +17,10 @@ templates = Jinja2Templates(directory="../../templates/htmls")
 
 apis = {
     "main": {"function" : mainController.main, "comment": "메인페이지"},
-    "sample": {"function" : sampleController.sample, "comment": "샘플페이지"}
+    "sample": {"function" : sampleController.sample, "comment": "샘플페이지"},
+    "post_getAll": {"function": postController.getAll, "comment": "포스트 전체 받기"},
+    "post_getEach": {"function": postController.getEach, "comment": "포스트 각각 받기"},
+    "post_create" : {"function": postController.create, "comment": "포스트 작성"}
 }
 
 htmls = {

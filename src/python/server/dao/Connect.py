@@ -1,6 +1,15 @@
 import pymysql
 import yaml
 
+def sqlRun(sql):
+
+    connect()
+    result = execute(sql)
+    closeDB()
+
+    return result
+
+
 def readConfig():
     with open('../../../config.yml') as f:
 

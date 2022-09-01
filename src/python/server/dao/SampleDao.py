@@ -6,7 +6,5 @@ def sample(sample):
         SELECT test2 FROM sample WHERE test1=\"{sample}\"
     '''
     
-    connect.connect()
-    result = connect.execute(sql)
-    connect.closeDB()
-    return result;
+    result = connect.sqlRun(sql)
+    return result
