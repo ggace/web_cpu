@@ -2,16 +2,16 @@
 
 ## 처음 시작
 1. python, xampp, sqlyog, git 설치
- - win키로 시스템 환경 변수 검색
- - 환경변수 클릭
- - 시스템 변수에 path 찾기
- - 편집
- - 새로만들기 하여 python이 깔린 위치 작성
+    - win키로 시스템 환경 변수 검색
+    - 환경변수 클릭
+    - 시스템 변수에 path 찾기
+    - 편집
+    - 새로만들기 하여 python이 깔린 위치 작성
 2. 자신이 좋아하는 ide 설치
 3. 폴더로 이동 후 아래 내용 각각 입력
- - git clone https://github.com/ggace/web_cpu
- - cd web_cpu
- - git checkout -f a9d4272eb75ae251502842062358014f160e6134
+    - git clone https://github.com/ggace/web_cpu
+    - cd web_cpu
+    - git checkout -f a9d4272eb75ae251502842062358014f160e6134
 4. ide, cmd - src/initial/py.py 맨위 네 문장 cmd에 각각 입력
 5. xampp - xampp 실행 후 mysql config 누른 후 my.ini 열기
 6. my.ini - ctrl - F 누른 후 port찾아 그 옆에 3306을 모두 3307로 변환
