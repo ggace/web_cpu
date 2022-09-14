@@ -29,3 +29,20 @@ VALUES("sample1", "welcome text1");
 
 INSERT INTO sample
 VALUES("sample2", "welcome text2");
+
+CREATE TABLE posts(
+	id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(30) NOT NULL,
+	content VARCHAR(100) NOT NULL,
+	regDate DATETIME NOT NULL,
+	updateDate DATETIME NOT NULL,
+	userId INT(10) UNSIGNED NOT NULL,
+
+	FOREIGN KEY(`userId`) REFERENCES `user`(`id`)
+);
+
+INSERT INTO `user`(loginId, loginpw, nickname, regDate, updateDate)
+VALUES("testid", "testpw", "testnickname", NOW(), NOW());
+
+INSERT INTO posts(title, content, regDate, updateDate, userid)
+VALUES("test", "content", NOW(), NOW(), 1);
