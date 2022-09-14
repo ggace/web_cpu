@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <title>{{title}}</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel" src="{{ url_for('static' ,path='board_posts.js') }}" ></script>
+
+    </head>
+    <body>
+
+      <script type="text/babel">
+          $.ajax({
+              url:"http://127.0.0.1:8000/api/post_getAll",
+              type:"get",
+              dataType:'json',
+              success:function(data){
+                console.log(data.data);
+                const elementMain = data.data.map((post)=>{
+                    return <Board boardId={post.id} user={post.nickname} content={post.content} title={post.title} updateDate={post.updateDate}></Board>
+                });
+                const root = document.getElementById('root');
+                ReactDOM.render(<div id="boardList"><Board boardId="번호" user="게시" title='제목' updateDate='수정일'></Board>{elementMain}</div>, root);
+
+              },
+              error: function(a,b,c){
+                  alert("서버 통신 과정에서 에러 발생")
+              }
+          })
+
+      </script>
+      <h1>게시물</h1>
+      <div id="root" class="container mx-auto">
+
+      </div>
+
+    </body>
+</html>

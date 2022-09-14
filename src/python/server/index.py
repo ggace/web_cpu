@@ -24,7 +24,8 @@ apis = {
 }
 
 htmls = {
-    "test": {"location" : "test.html", "title": "테스트"}
+    "test": {"location" : "test.html", "title": "테스트"},
+    "posts": {"location" : "posts.html", "title": "게시물들"}
 }
 
 @app.get("/")
@@ -32,11 +33,11 @@ async def url(req:Request):
     params = {}
     if(str(req.query_params).strip() != ""):
         params = util.get_params(str(req.query_params).strip())
-    
+
     controllerFunc = apis.get("main")
     if(controllerFunc != None):
         return controllerFunc["function"](params)
-    
+
     return "Not exists page"
 
 @app.get("/api/{api}")
@@ -44,20 +45,20 @@ async def url(api:str, req:Request):
     params = {}
     if(str(req.query_params).strip() != ""):
         params = util.get_params(str(req.query_params).strip())
-    
+
     controller = apis.get(api)
     if(controller != None):
         return controller["function"](params)
-    
+
     return "Not exists page"
 
-@app.get("/html/{file}", response_class=HTMLResponse) 
-async def read_item(req: Request, file: str): 
+@app.get("/html/{file}", response_class=HTMLResponse)
+async def read_item(req: Request, file: str):
     params = {}
     if(str(req.query_params).strip() != ""):
         params = util.get_params(str(req.query_params).strip())
-    
+
     controller = htmls.get(file)
-    
-    
-    return templates.TemplateResponse(controller["location"], {"request": req, "params":params, "title" : controller["title"]}) 
+
+
+    return templates.TemplateResponse(controller["location"], {"request": req, "params":params, "title" : controller["title"]})
